@@ -28,15 +28,15 @@ public class DoctorController {
     }
 
     @GetMapping("/doctors/{id}")
-    public Optional<Doctor> getdoctor_id(@PathVariable int id)
+    public Optional<Doctor> getdoctor_id(@PathVariable ("id")String id)
     {
-        return doctorRepository.findByDoctor_id(id);
+        return doctorRepository.findById(id);
     }
 
     @DeleteMapping("/doctors/{id}")
-    public ResponseEntity<HttpStatus> deletedoctorbyid(@PathVariable int id) {
+    public ResponseEntity<HttpStatus> deletedoctorbyid(@PathVariable ("id")String id) {
         try {
-           doctorRepository.deletedoctorbyid(id);
+           doctorRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -93,8 +93,8 @@ public class DoctorController {
     }
 
     @PutMapping("/doctors/{id}")
-    public ResponseEntity<Doctor> updatedoctor(@PathVariable int id, @RequestBody Doctor doctor) {
-        Optional<Doctor> doctorData = doctorRepository.findByDoctor_id(id);
+    public ResponseEntity<Doctor> updatedoctor(@PathVariable ("id")String id, @RequestBody Doctor doctor) {
+        Optional<Doctor> doctorData = doctorRepository.findById(id);
 
         if (doctorData.isPresent()) {
             Doctor doctor1 = doctorData.get();

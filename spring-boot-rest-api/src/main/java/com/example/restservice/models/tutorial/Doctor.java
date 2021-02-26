@@ -1,20 +1,33 @@
 package com.example.restservice.models.tutorial;
 
+import org.bson.types.Binary;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
 @Document(collection = "doctors")
 public class Doctor {
+@Id
+private  String id;
+
 
     private Integer doctor_id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     private  int hospital_id;
     private  String doctor_name;
     private String speciality;
     private  String address;
     private String about;
-    private  Boolean  profile_pic;  //eta ki korbo?/
+    private Binary profile_pic;
     private Date created_on;
 
     public int getDoctor_id() {
@@ -24,7 +37,7 @@ public class Doctor {
     {
 
     }
-    public Doctor (int id,int hospital_id,String doctor_name,String speciality,String address,String about,Boolean profile_pic,Date created_on)
+    public Doctor (int id,int hospital_id,String doctor_name,String speciality,String address,String about,Binary profile_pic,Date created_on)
     {
         this.doctor_id=id;
         this.doctor_name=doctor_name;
@@ -58,11 +71,11 @@ public class Doctor {
         this.created_on = created_on;
     }
 
-    public Boolean getProfile_pic() {
+    public Binary getProfile_pic() {
         return profile_pic;
     }
 
-    public void setProfile_pic(Boolean profile_pic) {
+    public void setProfile_pic(Binary profile_pic) {
         this.profile_pic = profile_pic;
     }
 

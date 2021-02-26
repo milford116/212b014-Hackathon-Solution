@@ -3,6 +3,7 @@ package com.example.restservice.models.tutorial;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Document(collection = "patients")
@@ -10,49 +11,50 @@ public class Patient {
     @Id
 private String id;
 
-    private int reg_id;
-    private int doctor_id;
-    private int hospital_id;
+    private int regid;
+    private int doctorid;
+    private int hospitalid;
     private int upi;
-    private String patient_name;
-    private Date reg_datetime;
-    private Date date_of_birth;
+    private String patientName;
+ //   @JsonFormat(pattern = "yyyy/MM/dd")
+    private LocalDate regdatetime;
+    private LocalDate dateBirth;
     private int age;
     private String gender;
     private String occupation;
-    private String health_insurance_no;
-    private String health_care_provider;
+    private String healthinsuranceno;
+    private String healthcareprovider;
     private String address;
-    private  String contact_no;
-    private Date created_on;
+    private  String contactno;
+    private Date createdon;
 
-    public Patient(int reg_id,int doctor_id,int hospital_id,int upi,String patient_name,Date reg_datetime,Date date_of_birth,
-                   int age,String gender,String occupation,String health_insurance_no,String health_care_provider,
-                   String address,String contact_no,Date created_on)
+    public Patient(int regid,int doctorid,int hospitalid,int upi,String patientName,LocalDate regdatetime,LocalDate dateBirth,
+                   int age,String gender,String occupation,String healthinsuranceno,String healthcareprovider,
+                   String address,String contactno,Date createdon)
     {
-        this.reg_id=reg_id;
-        this.doctor_id=doctor_id;
-        this.hospital_id=hospital_id;
+        this.regid=regid;
+        this.doctorid=doctorid;
+        this.hospitalid=hospitalid;
         this.upi=upi;
-        this.patient_name=patient_name;
-        this.reg_datetime=reg_datetime;
-        this.date_of_birth=date_of_birth;
+        this.patientName=patientName;
+        this.regdatetime=regdatetime;
+        this.dateBirth=dateBirth;
         this.age=age;
         this.gender=gender;
         this.occupation=occupation;
-        this.health_insurance_no=health_insurance_no;
-        this.health_care_provider=health_care_provider;
+        this.healthinsuranceno=healthinsuranceno;
+        this.healthcareprovider=healthcareprovider;
         this.address=address;
-        this.contact_no=contact_no;
-        this.created_on=created_on;
+        this.contactno=contactno;
+        this.createdon=createdon;
     }
 
-    public int getReg_id() {
-        return reg_id;
+    public int getregid() {
+        return regid;
     }
 
-    public void setReg_id(int reg_id) {
-        this.reg_id = reg_id;
+    public void setregid(int regid) {
+        this.regid = regid;
     }
 
     public String getId() {
@@ -67,38 +69,38 @@ private String id;
     public String toString() {
         return "Patient{" +
                 "id='" + id + '\'' +
-                ", reg_id=" + reg_id +
-                ", doctor_id=" + doctor_id +
-                ", hospital_id=" + hospital_id +
+                ", regid=" + regid +
+                ", doctorid=" + doctorid +
+                ", hospitalid=" + hospitalid +
                 ", upi=" + upi +
-                ", patient_name='" + patient_name + '\'' +
-                ", reg_datetime=" + reg_datetime +
-                ", date_of_birth=" + date_of_birth +
+                ", patientName='" + patientName + '\'' +
+                ", regdatetime=" + regdatetime +
+                ", of_birth=" + dateBirth +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", occupation='" + occupation + '\'' +
-                ", health_insurance_no='" + health_insurance_no + '\'' +
-                ", health_care_provider='" + health_care_provider + '\'' +
+                ", healthinsuranceno='" + healthinsuranceno + '\'' +
+                ", healthcareprovider='" + healthcareprovider + '\'' +
                 ", address='" + address + '\'' +
-                ", contact_no='" + contact_no + '\'' +
-                ", created_on=" + created_on +
+                ", contactno='" + contactno + '\'' +
+                ", createdon=" + createdon +
                 '}';
     }
 
-    public Date getCreated_on() {
-        return created_on;
+    public Date getcreatedon() {
+        return createdon;
     }
 
-    public void setCreated_on(Date created_on) {
-        this.created_on = created_on;
+    public void setcreatedon(Date createdon) {
+        this.createdon = createdon;
     }
 
-    public String getContact_no() {
-        return contact_no;
+    public String getcontactno() {
+        return contactno;
     }
 
-    public void setContact_no(String contact_no) {
-        this.contact_no = contact_no;
+    public void setcontactno(String contactno) {
+        this.contactno = contactno;
     }
 
     public String getAddress() {
@@ -109,20 +111,20 @@ private String id;
         this.address = address;
     }
 
-    public String getHealth_care_provider() {
-        return health_care_provider;
+    public String gethealthcareprovider() {
+        return healthcareprovider;
     }
 
-    public void setHealth_care_provider(String health_care_provider) {
-        this.health_care_provider = health_care_provider;
+    public void sethealthcareprovider(String healthcareprovider) {
+        this.healthcareprovider = healthcareprovider;
     }
 
-    public String getHealth_insurance_no() {
-        return health_insurance_no;
+    public String gethealthinsuranceno() {
+        return healthinsuranceno;
     }
 
-    public void setHealth_insurance_no(String health_insurance_no) {
-        this.health_insurance_no = health_insurance_no;
+    public void sethealthinsuranceno(String healthinsuranceno) {
+        this.healthinsuranceno = healthinsuranceno;
     }
 
     public String getOccupation() {
@@ -149,28 +151,28 @@ private String id;
         this.age = age;
     }
 
-    public Date getDate_of_birth() {
-        return date_of_birth;
+    public LocalDate getdateBirth() {
+        return dateBirth;
     }
 
-    public void setDate_of_birth(Date date_of_birth) {
-        this.date_of_birth = date_of_birth;
+    public void setof_birth(LocalDate dateBirth) {
+        this.dateBirth= dateBirth;
     }
 
-    public Date getReg_datetime() {
-        return reg_datetime;
+    public LocalDate getregdatetime() {
+        return regdatetime;
     }
 
-    public void setReg_datetime(Date reg_datetime) {
-        this.reg_datetime = reg_datetime;
+    public void setregdatetime(LocalDate regdatetime) {
+        this.regdatetime = regdatetime;
     }
 
-    public String getPatient_name() {
-        return patient_name;
+    public String getpatientName() {
+        return patientName;
     }
 
-    public void setPatient_name(String patient_name) {
-        this.patient_name = patient_name;
+    public void setpatientName(String patientName) {
+        this.patientName = patientName;
     }
 
     public int getUpi() {
@@ -181,20 +183,20 @@ private String id;
         this.upi = upi;
     }
 
-    public int getHospital_id() {
-        return hospital_id;
+    public int gethospitalid() {
+        return hospitalid;
     }
 
-    public void setHospital_id(int hospital_id) {
-        this.hospital_id = hospital_id;
+    public void sethospitalid(int hospitalid) {
+        this.hospitalid = hospitalid;
     }
 
-    public int getDoctor_id() {
-        return doctor_id;
+    public int getdoctorid() {
+        return doctorid;
     }
 
-    public void setDoctor_id(int doctor_id) {
-        this.doctor_id = doctor_id;
+    public void setdoctorid(int doctorid) {
+        this.doctorid = doctorid;
     }
 
 

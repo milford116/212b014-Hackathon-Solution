@@ -7,9 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,14 +22,14 @@ public class PatientController {
     @PostMapping("/patients")
     public ResponseEntity<Patient> createpatient(@RequestBody Patient patient) {
         try {
-           Patient patient1 = patientRepository.save(new Patient(patient.getReg_id(),
-                   patient.getDoctor_id(),patient.getHospital_id(),
-                   patient.getUpi(),patient.getPatient_name(),
-                   patient.getReg_datetime(),patient.getDate_of_birth(),
+           Patient patient1 = patientRepository.save(new Patient(patient.getregid(),
+                   patient.getdoctorid(),patient.gethospitalid(),
+                   patient.getUpi(),patient.getpatientName(),
+                   patient.getregdatetime(),patient.getdateBirth(),
                    patient.getAge(),patient.getGender(),
-                   patient.getOccupation(),patient.getHealth_insurance_no(),
-                   patient.getHealth_care_provider(),patient.getAddress(),
-                   patient.getContact_no(),patient.getCreated_on()));
+                   patient.getOccupation(),patient.gethealthinsuranceno(),
+                   patient.gethealthcareprovider(),patient.getAddress(),
+                   patient.getcontactno(),patient.getcreatedon()));
             return new ResponseEntity<>(patient1, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -78,14 +77,14 @@ patientRepository.findByPatient_name(name).forEach(patientList::add);
 
     }
 
-    @PostMapping ("/patients/{name}/{dob}")
-    public ResponseEntity<List<Patient>> getpatientnameanddob(@PathVariable  String name,@PathVariable String dob)
+    @PostMapping ("/patients/namedatebirth/{patientName}/{dateBirth}")
+    public ResponseEntity<List<Patient>> getpatientnameanddob(@PathVariable  String patientName,@PathVariable String dateBirth)
     {
         try {
-            Date date=new SimpleDateFormat("yyyy/MM/dd").parse(dob);
+            LocalDate date=LocalDate.parse(dateBirth);
             List<Patient> patientList= new ArrayList<Patient>();
 
-            patientRepository.findByPatient_nameAndDate_of_birth(name,date).forEach(patientList::add);
+            patientRepository.findByPatientNameAndDateBirth(patientName,date).forEach(patientList::add);
             if (patientList.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
@@ -103,21 +102,21 @@ patientRepository.findByPatient_name(name).forEach(patientList::add);
 
         if (patientData.isPresent()) {
             Patient patient1=patientData.get();
-            patient1.setReg_id(patient.getReg_id());
-            patient1.setHospital_id(patient.getHospital_id());
-            patient1.setPatient_name(patient.getPatient_name());
+            patient1.setregid(patient.getregid());
+            patient1.sethospitalid(patient.gethospitalid());
+            patient1.setpatientName(patient.getpatientName());
             patient1.setAge(patient.getAge());
             patient1.setAddress(patient.getAddress());
-            patient1.setDoctor_id(patient.getDoctor_id());
-            patient1.setContact_no(patient.getContact_no());
-            patient1.setCreated_on(patient.getCreated_on());
-            patient1.setDate_of_birth(patient.getDate_of_birth());
+            patient1.setdoctorid(patient.getdoctorid());
+            patient1.setcontactno(patient.getcontactno());
+            patient1.setcreatedon(patient.getcreatedon());
+            patient1.setof_birth(patient.getdateBirth());
             patient1.setGender(patient.getGender());
-            patient1.setHealth_care_provider(patient.getHealth_care_provider());
-            patient1.setHealth_insurance_no(patient.getHealth_insurance_no());
+            patient1.sethealthcareprovider(patient.gethealthcareprovider());
+            patient1.sethealthinsuranceno(patient.gethealthinsuranceno());
             patient1.setUpi(patient.getUpi());
             patient1.setOccupation(patient.getOccupation());
-            patient1.setReg_datetime(patient.getReg_datetime());
+            patient1.setregdatetime(patient.getregdatetime());
 
             return new ResponseEntity<>(patientRepository.save(patient1), HttpStatus.OK);
         } else {

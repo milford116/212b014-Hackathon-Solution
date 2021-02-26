@@ -1,8 +1,12 @@
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\tutorial\Tutorial.java
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\HospitalRepository.java
-C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\TutorialRepository.java
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\Greeting.java
+C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\PatientRepository.java
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\tutorial\Hospital.java
+C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\PatientController.java
+C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\DoctorRepository.java
+C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\TutorialRepository.java
+C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\DoctorController.java
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\tutorial\Patient.java
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\RestServiceApplication.java
 C:\Users\User\IdeaProjects\Eprescription\intern-2b-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\TutorialController.java
