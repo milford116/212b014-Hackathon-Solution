@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.example.restservice.GreetingControllerTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 18.864 s <<< FAILURE! - in com.example.restservice.GreetingControllerTests
+noParamGreetingShouldReturnDefaultMessage  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hospitalController': Unsatisfied dependency expressed through field 'hospitalRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hospitalRepository' defined in com.example.restservice.repository.HospitalRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.mapping.PropertyReferenceException: No property name found for type Hospital!
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hospitalRepository' defined in com.example.restservice.repository.HospitalRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.mapping.PropertyReferenceException: No property name found for type Hospital!
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property name found for type Hospital!
+
+paramGreetingShouldReturnTailoredMessage  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hospitalController': Unsatisfied dependency expressed through field 'hospitalRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hospitalRepository' defined in com.example.restservice.repository.HospitalRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.mapping.PropertyReferenceException: No property name found for type Hospital!
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hospitalRepository' defined in com.example.restservice.repository.HospitalRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.mapping.PropertyReferenceException: No property name found for type Hospital!
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property name found for type Hospital!
+

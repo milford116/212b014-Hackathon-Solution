@@ -1,0 +1,22 @@
+com/example/restservice/models/tutorial/Hospital.java
+ com.example.restservice.models.tutorial.Hospital
+com/example/restservice/models/tutorial/Doctor.java
+ com.example.restservice.models.tutorial.Doctor
+com/example/restservice/repository/HospitalRepository.java
+ com.example.restservice.repository.HospitalRepository
+com/example/restservice/Greeting.java
+ com.example.restservice.Greeting
+com/example/restservice/repository/TutorialRepository.java
+ com.example.restservice.repository.TutorialRepository
+com/example/restservice/RestServiceApplication.java
+ com.example.restservice.RestServiceApplication
+com/example/restservice/GreetingController.java
+ com.example.restservice.GreetingController
+com/example/restservice/models/tutorial/Tutorial.java
+ com.example.restservice.models.tutorial.Tutorial
+com/example/restservice/controllers/tutorial/HospitalController.java
+ com.example.restservice.controllers.tutorial.HospitalController
+com/example/restservice/models/tutorial/Patient.java
+ com.example.restservice.models.tutorial.Patient
+com/example/restservice/controllers/tutorial/TutorialController.java
+ com.example.restservice.controllers.tutorial.TutorialController
