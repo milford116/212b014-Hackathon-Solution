@@ -1,9 +1,9 @@
 com/example/restservice/models/tutorial/Hospital.java
  com.example.restservice.models.tutorial.Hospital
-com/example/restservice/models/tutorial/Doctor.java
- com.example.restservice.models.tutorial.Doctor
-com/example/restservice/repository/HospitalRepository.java
- com.example.restservice.repository.HospitalRepository
+com/example/restservice/controllers/tutorial/TutorialController.java
+ com.example.restservice.controllers.tutorial.TutorialController
+com/example/restservice/models/tutorial/Tutorial.java
+ com.example.restservice.models.tutorial.Tutorial
 com/example/restservice/Greeting.java
  com.example.restservice.Greeting
 com/example/restservice/repository/TutorialRepository.java
@@ -12,11 +12,29 @@ com/example/restservice/RestServiceApplication.java
  com.example.restservice.RestServiceApplication
 com/example/restservice/GreetingController.java
  com.example.restservice.GreetingController
-com/example/restservice/models/tutorial/Tutorial.java
- com.example.restservice.models.tutorial.Tutorial
+com/example/restservice/models/tutorial/Prescription.java
+ com.example.restservice.models.tutorial.Prescription
+com/example/restservice/repository/PrescriptionRepository.java
+ com.example.restservice.repository.PrescriptionRepository
+com/example/restservice/controllers/tutorial/PrescriptionController.java
+ com.example.restservice.controllers.tutorial.PrescriptionController
+com/example/restservice/controllers/tutorial/DoctorController.java
+ com.example.restservice.controllers.tutorial.DoctorController
+com/example/restservice/models/tutorial/Medicines.java
+ com.example.restservice.models.tutorial.Medicines
+com/example/restservice/models/tutorial/Doctor.java
+ com.example.restservice.models.tutorial.Doctor
+com/example/restservice/repository/PatientRepository.java
+ com.example.restservice.repository.PatientRepository
+com/example/restservice/models/tutorial/Diets.java
+ com.example.restservice.models.tutorial.Diets
+com/example/restservice/repository/HospitalRepository.java
+ com.example.restservice.repository.HospitalRepository
 com/example/restservice/controllers/tutorial/HospitalController.java
  com.example.restservice.controllers.tutorial.HospitalController
 com/example/restservice/models/tutorial/Patient.java
  com.example.restservice.models.tutorial.Patient
-com/example/restservice/controllers/tutorial/TutorialController.java
- com.example.restservice.controllers.tutorial.TutorialController
+com/example/restservice/controllers/tutorial/PatientController.java
+ com.example.restservice.controllers.tutorial.PatientController
+com/example/restservice/repository/DoctorRepository.java
+ com.example.restservice.repository.DoctorRepository

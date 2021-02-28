@@ -1,7 +1,10 @@
+com\example\restservice\controllers\tutorial\PrescriptionController.class
+com\example\restservice\models\tutorial\Prescription.class
 com\example\restservice\repository\HospitalRepository.class
 com\example\restservice\controllers\tutorial\HospitalController.class
 com\example\restservice\controllers\tutorial\PatientController.class
 com\example\restservice\repository\DoctorRepository.class
+com\example\restservice\models\tutorial\Diets.class
 com\example\restservice\models\tutorial\Tutorial.class
 com\example\restservice\controllers\tutorial\TutorialController.class
 com\example\restservice\controllers\tutorial\DoctorController.class
@@ -10,6 +13,8 @@ com\example\restservice\RestServiceApplication.class
 com\example\restservice\repository\PatientRepository.class
 com\example\restservice\models\tutorial\Doctor.class
 com\example\restservice\GreetingController.class
+com\example\restservice\repository\PrescriptionRepository.class
 com\example\restservice\Greeting.class
 com\example\restservice\repository\TutorialRepository.class
+com\example\restservice\models\tutorial\Medicines.class
 com\example\restservice\models\tutorial\Patient.class
