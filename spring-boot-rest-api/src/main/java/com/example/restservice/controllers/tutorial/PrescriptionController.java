@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
-public class PrescriptionController {
+public class  PrescriptionController {
     @Autowired
     PrescriptionRepository prescriptionRepository;
     @Autowired

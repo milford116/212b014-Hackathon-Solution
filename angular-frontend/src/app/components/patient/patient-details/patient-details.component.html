@@ -1,0 +1,21 @@
+<div class="row row justify-content-center align-self-center">
+    <div style="width: 400px;" *ngIf="patient">
+      <h2>Patient Details</h2>
+      <div>
+        <label><b>PatientName: </b></label> {{patient.patientName}}
+      </div>
+      <div>
+        <label><b>Doctorid: </b></label> {{patient.doctorid}}
+      </div>
+      <div>
+        <label><b>Gender: </b></label> {{patient.gender}}
+      </div>
+    
+    
+    <br>
+    <br>
+    <button (click)="updateLink()" class="btn btn-info">Update</button> <span></span>
+    <button (click)="list()" class="btn btn-primary">Back to Patient List</button><br>
+    </div>
+    </div>
+    
