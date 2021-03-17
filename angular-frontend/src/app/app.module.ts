@@ -13,6 +13,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PatientListComponent } from './components/patient/patient-list/patient-list.component';
 import { CreatePatientComponent } from './components/patient/create-patient/create-patient.component';
 import { PatientDetailsComponent } from './components/patient/patient-details/patient-details.component';
+import { UpdatePatientComponent } from './components/patient/update-patient/update-patient.component';
+import { HospitalListComponent } from './components/hospital/hospital-list/hospital-list.component';
+import { CreateHospitalComponent } from './components/hospital/create-hospital/create-hospital.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { PatientDetailsComponent } from './components/patient/patient-details/pa
     TutorialListComponent,
     PatientListComponent,
     CreatePatientComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
+    UpdatePatientComponent,
+    HospitalListComponent,
+    CreateHospitalComponent
   ],
     imports: [
         RouterModule,

@@ -7,6 +7,9 @@ import { TutorialListComponent } from './components/tutorial/tutorial-list/tutor
 import {PatientListComponent} from './components/patient/patient-list/patient-list.component';
 import { CreatePatientComponent } from './components/patient/create-patient/create-patient.component';
 import { PatientDetailsComponent } from './components/patient/patient-details/patient-details.component';
+import { UpdatePatientComponent } from './components/patient/update-patient/update-patient.component';
+import { HospitalListComponent } from './components/hospital/hospital-list/hospital-list.component';
+import { CreateHospitalComponent } from './components/hospital/create-hospital/create-hospital.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'tutorial', pathMatch: 'full' },
@@ -16,7 +19,10 @@ const routes: Routes = [
   { path: 'update/:id', component: UpdateTutorialComponent},
   {path:'patients',component:PatientListComponent},
   {path:'patients/add',component:CreatePatientComponent},
-  {path:'patients/details/:id',component:PatientDetailsComponent}
+  {path:'patients/details/:id',component:PatientDetailsComponent},
+  {path:'patients/update/:id',component:UpdatePatientComponent},
+  {path:'hospitals',component:HospitalListComponent},
+  {path:'hospitals/create',component:CreateHospitalComponent}
 
 ];
 

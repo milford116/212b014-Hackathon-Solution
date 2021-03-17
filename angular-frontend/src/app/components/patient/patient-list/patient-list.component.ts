@@ -43,7 +43,7 @@ export class PatientListComponent implements OnInit {
     this.router.navigate(['patients/details', id]);
   }
   updatePatient(id: string){
-    this.router.navigate(['update', id]);
+    this.router.navigate(['patients/update', id]);
   }
 
   OnSubmit(searchName){

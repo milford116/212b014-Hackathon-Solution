@@ -1,0 +1,29 @@
+<div class="row row justify-content-center align-self-center">
+
+    <div style="width: 400px;">
+      <h3>Update Patient</h3><br>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Patientname</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="patient.patientName" name="name">
+        </div>
+    
+        <div class="form-group">
+          <label for="name">Age</label>
+          <input type="text" class="form-control" id="age" required [(ngModel)]="patient.age" name="age">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender" required [(ngModel)]="patient.gender" name="gender">
+          </div>
+    
+    
+        <button type="submit" class="btn btn-success">Update</button>
+      </form>
+    
+      <br>
+      <br>
+      <button (click)="list()" class="btn btn-primary">Back to Patient List</button><br>
+    </div>
+    </div>
+    

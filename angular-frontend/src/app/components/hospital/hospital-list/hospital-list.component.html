@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Hospital List</h2>
+    </div>
+    <form [formGroup]="searchForm" (ngSubmit)="OnSubmit(searchForm.value)">
+        <input type="text" id="name" formControlName="name">
+        <button type="submit">Search</button>
+      </form>
+    
+   
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>HospitalName</th>
+          <th>BranchName</th>
+          <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let h of hospitals| async">
+          <td>{{h.hospital_name}}</td>
+          <td>{{h.branch_name}}</td>
+          <td>{{h.address}}</td>
+          
+
+          
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
