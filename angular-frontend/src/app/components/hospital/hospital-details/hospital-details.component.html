@@ -1,0 +1,29 @@
+<div class="row row justify-content-center align-self-center">
+    <div style="width: 400px;" *ngIf="hospital">
+      <h2>Hospital Details</h2>
+      <div>
+        <label><b>HospitalName: </b></label> {{hospital. hospital_name}}
+      </div>
+      <div>
+        <label><b>Hospitalid: </b></label> {{hospital.id}}
+      </div>
+      <div>
+        <label><b>Branch-name: </b></label> {{hospital.branch_name}}
+      </div>
+      <div>
+        <label><b>Address: </b></label> {{hospital.address}}
+      </div>
+
+      <div>
+        <label><b>Hospital-email: </b></label> {{hospital.email}}
+      </div>
+     
+    
+    
+    <br>
+    <br>
+    <button (click)="updateLink()" class="btn btn-info">Update</button> <span></span>
+    <button (click)="list()" class="btn btn-primary">Back to Hospital List</button><br>
+    </div>
+    </div>
+    

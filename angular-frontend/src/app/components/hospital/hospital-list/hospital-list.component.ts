@@ -29,6 +29,24 @@ export class HospitalListComponent implements OnInit {
     this.hospitals= this.hospitalService.getAll();
     console.log(this.hospitals);
   }
+
+  deleteHospital(id: bigint) {
+    this.hospitalService.delete(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
+  }
+
+  hospitalDetails(id: bigint){
+    this.router.navigate(['hospitals/getdetails', id]);
+  }
+  updateHospital(id: bigint){
+    this.router.navigate(['hospitals/getupdate', id]);
+  }
+
   OnSubmit(searchName){
     console.log('Search name:');
     console.log(searchName.name);

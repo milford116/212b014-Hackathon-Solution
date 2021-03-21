@@ -31,7 +31,7 @@ export class PatientDetailsComponent implements OnInit {
     this.router.navigate(['patients']);
   }
   updateLink(){
-    this.router.navigate(['patients/update/' + this.patient.id]);  //link thik kora lagbe
+    this.router.navigate(['patients/update/' + this.patient.id]);  
   }
 
 }
