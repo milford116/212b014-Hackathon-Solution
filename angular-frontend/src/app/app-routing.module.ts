@@ -16,6 +16,7 @@ import { DoctorListComponent } from './components/doctor/doctor-list/doctor-list
 import { CreateDoctorComponent } from './components/doctor/create-doctor/create-doctor.component';
 import { DoctorDetailsComponent } from './components/doctor/doctor-details/doctor-details.component';
 import { UpdateDoctorComponent } from './components/doctor/update-doctor/update-doctor.component';
+import { PrescriptionListComponent } from './components/prescription/prescription-list/prescription-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'tutorial', pathMatch: 'full' },
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path:'doctors',component:DoctorListComponent},
   {path:'doctor/create',component:CreateDoctorComponent},
   {path:'doctor/getdetails/:id',component:DoctorDetailsComponent},
-  {path:'doctor/getupdate/:id',component:UpdateDoctorComponent}
+  {path:'doctor/getupdate/:id',component:UpdateDoctorComponent},
+  {path:'prescriptions',component:PrescriptionListComponent}
 
 ];
 

@@ -38,7 +38,7 @@ public Optional<Hospital> gethospital_id(@PathVariable int id)
     {
         try {
             List<Hospital> hospitalList= new ArrayList<Hospital>();
-               hospitalRepository.findByHospital_name(name).forEach(hospitalList::add);
+               hospitalRepository.findByHospital_nameContaining(name).forEach(hospitalList::add);
 
             if (hospitalList.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

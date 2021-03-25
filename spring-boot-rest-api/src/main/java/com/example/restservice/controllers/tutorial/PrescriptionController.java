@@ -70,7 +70,7 @@ public class  PrescriptionController {
     }
 
     @PostMapping ("/prescriptions/name/dob")
-    public ResponseEntity<List<Prescription>> getprescripbynameanddob(@RequestBody  Patient patient) {
+    public ResponseEntity<List<Prescription>> getprescripbynameanddob(@RequestBody Patient patient) {
         try {
             int regid;
             List<Patient> patients= new ArrayList<Patient>();

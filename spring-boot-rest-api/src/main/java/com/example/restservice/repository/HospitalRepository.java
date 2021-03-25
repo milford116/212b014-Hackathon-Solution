@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface HospitalRepository extends MongoRepository<Hospital,Integer> {
     @Query("{ 'hospital_name' : ?0 }")
-List<Hospital> findByHospital_name(String hospital_name);
+List<Hospital> findByHospital_nameContaining
+            (String hospital_name);
 
 }
 

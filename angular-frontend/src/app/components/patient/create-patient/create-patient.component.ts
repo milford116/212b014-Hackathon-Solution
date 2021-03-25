@@ -30,6 +30,7 @@ export class CreatePatientComponent implements OnInit {
         console.log(data);
         this.patient = new Patient();
         console.log(this.patient);
+        this.patientService.sendListUpdateAlert('Added');
         this.gotoList();
       },
       error => console.log(error));

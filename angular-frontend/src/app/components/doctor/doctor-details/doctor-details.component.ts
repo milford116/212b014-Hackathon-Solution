@@ -32,7 +32,7 @@ export class DoctorDetailsComponent implements OnInit {
     this.router.navigate(['doctors']);
   }
   updateLink(){
-    this.router.navigate(['patients/update/' + this.doctor.id]);   //link thik korba
+    this.router.navigate(['doctor/getupdate/' + this.doctor.id]);   
   }
 
 

@@ -26,6 +26,8 @@ private String id;
     private String history;
     private int followDoctorId;
 
+
+
     public Prescription(long prescriptionId,int regId,int doctorId,LocalDate createdOn,LocalDate modifiedOn,double bloodPressure,
                         double pulseRate,double weight,List<String>allergies,List<String>disabilities,List<Medicines>medicines,
                         List<Diets>diets,String history,int followDoctorId)

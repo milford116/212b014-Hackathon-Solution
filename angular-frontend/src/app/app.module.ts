@@ -22,6 +22,10 @@ import { DoctorListComponent } from './components/doctor/doctor-list/doctor-list
 import { CreateDoctorComponent } from './components/doctor/create-doctor/create-doctor.component';
 import { DoctorDetailsComponent } from './components/doctor/doctor-details/doctor-details.component';
 import { UpdateDoctorComponent } from './components/doctor/update-doctor/update-doctor.component';
+import { PrescriptionListComponent } from './components/prescription/prescription-list/prescription-list.component';
+import { PrescriptionDetailsComponent } from './components/prescription/prescription-details/prescription-details.component';
+import { CreatePrescriptionComponent } from './components/prescription/create-prescription/create-prescription.component';
+import { UpdatePrescriptionComponent } from './components/prescription/update-prescription/update-prescription.component';
 
 
 @NgModule({
@@ -42,7 +46,11 @@ import { UpdateDoctorComponent } from './components/doctor/update-doctor/update-
     DoctorListComponent,
     CreateDoctorComponent,
     DoctorDetailsComponent,
-    UpdateDoctorComponent
+    UpdateDoctorComponent,
+    PrescriptionListComponent,
+    PrescriptionDetailsComponent,
+    CreatePrescriptionComponent,
+    UpdatePrescriptionComponent
   ],
     imports: [
         RouterModule,
