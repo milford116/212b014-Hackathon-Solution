@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Prescription } from '../classes/Prescription';
+import { Medicines } from '../classes/Medicine';
 
 const baseUrl = 'http://localhost:8080/api/prescriptions';
 @Injectable({
@@ -62,12 +63,15 @@ export class PrescriptionService {
   getAll(): Observable<Prescription[]> {
     return this.http.get<Prescription[]>(baseUrl);
   }
-
+  
   get(id: string): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
+  getid(id:bigint):Observable<any>{
+    return this.http.get(`${baseUrl}/patient/${id}`);
+  }
 
-  create(data: object): Observable<object> {
+  create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
   update(id: any, data: any): Observable<any> {

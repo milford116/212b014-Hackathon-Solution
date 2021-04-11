@@ -56,6 +56,23 @@ public class PatientController {
         }
     }
 
+    @GetMapping("/patients/regid/{id}")
+    public ResponseEntity<List<Patient>> getpatientByregId(@PathVariable int id) {
+        List<Patient> patientList= new ArrayList<Patient>();
+
+        try {
+            patientRepository.findByPatient_regid(id).forEach(patientList::add);
+            if (patientList.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+            }
+            return new ResponseEntity<>(patientList, HttpStatus.OK);
+        }catch (Exception e)
+        {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 
     @PostMapping ("/patients/{name}")

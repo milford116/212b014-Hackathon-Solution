@@ -27,6 +27,23 @@ public class DoctorController {
 
     }
 
+    @GetMapping("/doctors/regid/{id}")
+    public ResponseEntity<List<Doctor>> getdoctorByregId(@PathVariable int id) {
+        List<Doctor> doctorList= new ArrayList<Doctor>();
+
+        try {
+            doctorRepository.findByDoctor_id(id).forEach(doctorList::add);
+            if (doctorList.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+            }
+            return new ResponseEntity<>(doctorList, HttpStatus.OK);
+        }catch (Exception e)
+        {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping("/doctors/{id}")
     public Optional<Doctor> getdoctor_id(@PathVariable ("id")String id)
     {

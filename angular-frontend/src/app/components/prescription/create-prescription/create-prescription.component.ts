@@ -9,6 +9,7 @@ import { Medicines } from 'src/app/classes/Medicine';
 import { PatientService } from 'src/app/services/patient.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { PrescriptionService } from 'src/app/services/prescription.service';
+import { MedicinesService } from 'src/app/services/medicines.service';
 
 @Component({
   selector: 'app-create-prescription',
@@ -27,13 +28,16 @@ export class CreatePrescriptionComponent implements OnInit {
   disabilityList: string[];
   medicineList: Observable<Medicines[]>;
   dietList: string[];
+  selectedMedicine: Medicines = new Medicines();
 
   //report form
   reportForm = this.fb.group({
-    patientid: [ '', Validators.required ],
-    doctorid: [ '', Validators.required ],
-    bloodpressure: [ '', Validators.required ],
-    pulserate: [ '', Validators.required ],
+    //patientid: [ '', Validators.required ],
+    regId:[ '', Validators.required ],
+    //doctorid: [ '', Validators.required ],
+    doctorId:[ '', Validators.required ],
+    bloodPressure: [ '', Validators.required ],
+    pulseRate: [ '', Validators.required ],
     weight: [ '', Validators.required ],
     allergies: this.fb.array([
       this.fb.control('')
@@ -43,13 +47,14 @@ export class CreatePrescriptionComponent implements OnInit {
     ]),
     medicines: this.fb.array([ this.buildMedicine() ]),
     diets: this.fb.array([ this.buildDiet() ]),
-    patienthistory: [ '', Validators.required ],
-    followupdoctorid: [ '', Validators.required ]
+    history: [ '', Validators.required ],
+    followDoctorId: [ '', Validators.required ]
   });
 
   constructor(private patientService: PatientService,
     private doctorService: DoctorService,
     private prescriptionService: PrescriptionService,  //MEDICINE SERVICE BAKI
+    private medicineService:MedicinesService,
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder) { }
@@ -114,7 +119,7 @@ export class CreatePrescriptionComponent implements OnInit {
     this.patients = this.patientService.getAll();
     this.allergyList = this.prescriptionService.getAllergies();
     this.disabilityList = this.prescriptionService.getDisabilities();
-    //this.medicineList = this.medicineService.getAllMedicine();
+    this.medicineList = this.medicineService.getAllMedicine();
     this.dietList = this.prescriptionService.getDiets();
     this.patientID = this.route.snapshot.params['id'.toString()];
     this.patient = new Patient();
@@ -127,6 +132,7 @@ export class CreatePrescriptionComponent implements OnInit {
               patientid: this.patient.id,
               doctorid: this.patient.doctorid
             });
+            console.log("hehehe");
             console.log(this.patient);
           }
         );
@@ -138,12 +144,15 @@ export class CreatePrescriptionComponent implements OnInit {
 
   save() {
     this.prescription = this.reportForm.value;
-    console.log(this.prescription[0]);
+    //console.log(this.prescription[0]);
+    
     this.prescriptionService
       .create(this.prescription).subscribe(prescriptionData => {
-       // this.prescription = prescriptionData;
+        this.prescription = prescriptionData;
+       // console.log(this.prescription.id);
         this.reportID = this.prescription.id;
         this.prescription = new Prescription();
+        
         this.prescriptionService.sendListUpdateAlert('Added');
         this.gotoList();
       },
@@ -154,9 +163,18 @@ export class CreatePrescriptionComponent implements OnInit {
     this.submitted = true;
     this.save();
   }
+  setMedicine(index: string) {
+    this.medicineService.getMedicine(index).subscribe(
+      medicineData => {
+        this.selectedMedicine = medicineData;
+        console.log(this.selectedMedicine);
+      }
+    );
+  }
 
   gotoList() {
-    this.router.navigate([ 'prescrip/details', this.reportID ]);
+    //console.log(this.reportID);
+    this.router.navigate([ 'prescrip/details',this.reportID ]);
   }
 
   cancelAdd() {

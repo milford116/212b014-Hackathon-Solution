@@ -17,6 +17,9 @@ export class DoctorService {
   get(id: string): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
+  getid(id:bigint):Observable<any>{
+    return this.http.get(`${baseUrl}/regid/${id}`);
+  }
 
   create(data: object): Observable<object> {
     return this.http.post(baseUrl, data);

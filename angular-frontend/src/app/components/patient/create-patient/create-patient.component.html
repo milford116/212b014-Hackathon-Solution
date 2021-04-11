@@ -9,14 +9,47 @@
     
         <div class="form-group">
           <label for="name">Doctorid</label>
-          <input type="int" class="form-control" id="doctorid" required [(ngModel)]="patient.doctorid" name="doctorid">
+          <input type="number" class="form-control" id="doctorid" required [(ngModel)]="patient.doctorid" name="doctorid">
         </div>
         <div class="form-group">
             <label for="gender">Gender</label>
             <input type="text" class="form-control" id="gender" required [(ngModel)]="patient.gender" name="gender">
           </div>
     
-    
+          <div class="form-group">
+            <label for="regid">Regid</label>
+            <input type="int" class="form-control" id="regid" required [(ngModel)]="patient.regid" name="regid">
+          </div>
+          <div class="form-group">
+            <label for="regid">Date of Birth</label>
+            <input type="Date" class="form-control" id="dateBirth" required [(ngModel)]="patient.dateBirth" name="dateBirth">
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" required [(ngModel)]="patient.age" name="age">
+          </div>
+          <div class="form-group">
+            <label for="occupation">Occupation</label>
+            <input type="text" class="form-control" id="occupation" required [(ngModel)]="patient.occupation" name="occupation">
+          </div>
+          <div class="form-group">
+            <label for="healthcare">healthinsuranceno</label>
+            <input type="text" class="form-control" id="healthinsuranceno" required [(ngModel)]="patient.healthinsuranceno" name="healthinsuranceno">
+          </div>
+          
+          <div class="form-group">
+            <label for="healthcare">Healthcare-provider</label>
+            <input type="text" class="form-control" id="Healthcare-provider" required [(ngModel)]="patient.healthcareprovider" name="healthinsuranceno">
+          </div>
+          <div class="form-group">
+            <label for="healthcare">Address</label>
+            <input type="text" class="form-control" id="address" required [(ngModel)]="patient.address" name="healthinsuranceno">
+          </div>
+          <div class="form-group">
+            <label for="healthcare">Contact</label>
+            <input type="text" class="form-control" id="contact" required [(ngModel)]="patient.contactno" name="healthinsuranceno">
+          </div>
+
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>

@@ -26,6 +26,11 @@ import { PrescriptionListComponent } from './components/prescription/prescriptio
 import { PrescriptionDetailsComponent } from './components/prescription/prescription-details/prescription-details.component';
 import { CreatePrescriptionComponent } from './components/prescription/create-prescription/create-prescription.component';
 import { UpdatePrescriptionComponent } from './components/prescription/update-prescription/update-prescription.component';
+import { InvoiceListComponent } from './components/Invoice/invoice-list/invoice-list.component';
+import { MedicineListComponent } from './components/Medicine/medicine-list/medicine-list.component';
+import { MedicineAddComponent } from './components/Medicine/medicine-add/medicine-add.component';
+import { MedicineDetailsComponent } from './components/Medicine/medicine-details/medicine-details.component';
+import { MedicineEditComponent } from './components/Medicine/medicine-edit/medicine-edit.component';
 
 
 @NgModule({
@@ -50,7 +55,12 @@ import { UpdatePrescriptionComponent } from './components/prescription/update-pr
     PrescriptionListComponent,
     PrescriptionDetailsComponent,
     CreatePrescriptionComponent,
-    UpdatePrescriptionComponent
+    UpdatePrescriptionComponent,
+    InvoiceListComponent,
+    MedicineListComponent,
+    MedicineAddComponent,
+    MedicineDetailsComponent,
+    MedicineEditComponent
   ],
     imports: [
         RouterModule,
